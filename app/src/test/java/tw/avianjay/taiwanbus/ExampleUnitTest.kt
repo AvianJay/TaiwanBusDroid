@@ -1,4 +1,4 @@
-package tw.avianjay.taiwanbusdroid
+package tw.avianjay.taiwanbus
 
 import org.junit.Test
 

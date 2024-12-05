@@ -1,4 +1,4 @@
-package tw.avianjay.taiwanbusdroid.ui.notifications
+package tw.avianjay.taiwanbus.ui.notifications
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

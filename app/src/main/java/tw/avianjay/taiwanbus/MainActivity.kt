@@ -1,4 +1,4 @@
-package tw.avianjay.taiwanbusdroid
+package tw.avianjay.taiwanbus
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -7,7 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import tw.avianjay.taiwanbusdroid.databinding.ActivityMainBinding
+import tw.avianjay.taiwanbus.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

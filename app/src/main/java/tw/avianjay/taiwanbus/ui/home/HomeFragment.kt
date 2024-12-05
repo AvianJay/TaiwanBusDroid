@@ -1,4 +1,4 @@
-package tw.avianjay.taiwanbusdroid.ui.home
+package tw.avianjay.taiwanbus.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import tw.avianjay.taiwanbusdroid.databinding.FragmentHomeBinding
+import tw.avianjay.taiwanbus.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
