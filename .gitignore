@@ -17,7 +17,6 @@ output.json
 
 # IntelliJ
 *.iml
-.idea/
 misc.xml
 deploymentTargetDropDown.xml
 render.experimental.xml
@@ -31,3 +30,11 @@ google-services.json
 
 # Android Profiling
 *.hprof
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+
