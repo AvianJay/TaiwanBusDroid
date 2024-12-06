@@ -6,13 +6,13 @@ plugins {
 
 android {
     namespace = "tw.avianjay.taiwanbus"
-    compileSdk = 34
+    compileSdk = 35
     flavorDimensions += "pyVersion"
 
     defaultConfig {
         applicationId = "tw.avianjay.taiwanbus"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
