@@ -4,6 +4,7 @@
 	"name": "Ubuntu",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"runArgs": ["--device=/dev/net/tun"],
 	"features": {
 		"ghcr.io/devcontainers/features/java:latest": {
 			"installGradle": true,
@@ -23,7 +24,8 @@
 		},
 		"ghcr.io/akhildevelops/devcontainer-features/android-cli:latest": {
 			"PACKAGES": "platform-tools,platforms;android-35,platforms;android-34,build-tools;35.0.0,build-tools;34.0.0"
-		}
+		},
+		"ghcr.io/tailscale/codespace/tailscale": {}
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
