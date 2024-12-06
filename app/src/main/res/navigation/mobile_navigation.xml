@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="tw.avianjay.taiwanbus.ui.dashboard.DashboardFragment"
+        android:name="tw.avianjay.taiwanbus.ui.automatic.AutomaticFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_automatic" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="tw.avianjay.taiwanbus.ui.notifications.NotificationsFragment"
+        android:name="tw.avianjay.taiwanbus.ui.settings.SettingsFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_settings" />
 </navigation>
