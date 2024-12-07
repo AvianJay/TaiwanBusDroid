@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_automatic"
         android:name="tw.avianjay.taiwanbus.ui.automatic.AutomaticFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_automatic"
         tools:layout="@layout/fragment_automatic" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_settings"
         android:name="tw.avianjay.taiwanbus.ui.settings.SettingsFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>

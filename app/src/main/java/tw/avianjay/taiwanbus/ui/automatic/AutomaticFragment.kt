@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import tw.avianjay.taiwanbus.databinding.FragmentDashboardBinding
+import tw.avianjay.taiwanbus.databinding.FragmentAutomaticBinding
 
 class AutomaticFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentAutomaticBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +22,14 @@ class AutomaticFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
+        val automaticViewModel =
             ViewModelProvider(this).get(AutomaticViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentAutomaticBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textAutomatic
+        automaticViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
