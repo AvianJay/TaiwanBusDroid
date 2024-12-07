@@ -3,4 +3,7 @@
     <string name="title_home">主頁</string>
     <string name="title_automatic">自動化</string>
     <string name="title_settings">設定</string>
+    <string name="title_activity_bus_view">BusViewActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>
