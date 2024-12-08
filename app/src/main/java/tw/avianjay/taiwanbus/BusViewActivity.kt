@@ -10,6 +10,9 @@ import android.view.Menu
 import android.view.MenuItem
 import tw.avianjay.taiwanbus.ui.main.SectionsPagerAdapter
 import tw.avianjay.taiwanbus.databinding.ActivityBusViewBinding
+import com.chaquo.python.PyException
+import com.chaquo.python.Python
+import com.chaquo.python.android.AndroidPlatform
 
 class BusViewActivity : AppCompatActivity() {
 
