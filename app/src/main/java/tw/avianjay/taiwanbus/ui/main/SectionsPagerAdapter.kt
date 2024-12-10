@@ -4,12 +4,12 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.chaquo.python.Python
 import tw.avianjay.taiwanbus.R
 
-private val TAB_TITLES = arrayOf(
-    R.string.tab_text_1,
-    R.string.tab_text_2
-)
+val py = Python.getInstance()
+val twbus = py.getModule("main")
+val paths: List<String> = twbus.callAttr("paths_name").asList().map { it.toString() }
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -25,11 +25,12 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        return context.resources.getString(TAB_TITLES[position])
+        // 使用 paths 的值作为标签标题
+        return paths[position]
     }
 
     override fun getCount(): Int {
-        // Show 2 total pages.
-        return 2
+        // 返回 paths 的长度
+        return paths.size
     }
 }

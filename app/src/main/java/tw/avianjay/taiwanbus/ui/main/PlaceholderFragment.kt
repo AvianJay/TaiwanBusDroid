@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import tw.avianjay.taiwanbus.R
 import tw.avianjay.taiwanbus.databinding.FragmentBusViewBinding
+import com.chaquo.python.Python
 
 /**
  * A placeholder fragment containing a simple view.

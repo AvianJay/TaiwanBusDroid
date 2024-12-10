@@ -1,4 +1,5 @@
 package tw.avianjay.taiwanbus
+
 import org.json.JSONObject
 import android.os.Bundle
 import android.content.Intent
