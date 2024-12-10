@@ -1,6 +1,7 @@
 package tw.avianjay.taiwanbus
 
 import android.os.Bundle
+import android.content.Intent
 import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -48,6 +49,13 @@ class MainActivity : AppCompatActivity() {
             } catch (e: PyException) {
                 Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
             }
+        }
+        findViewById<Button>(R.id.view_bus).setOnClickListener {
+            val jsonData = """{"routekey": 304030}"""
+            val intent = Intent(this, BusViewActivity::class.java)
+            intent.putExtra("busData", jsonData)
+
+            startActivity(intent)
         }
     }
 }

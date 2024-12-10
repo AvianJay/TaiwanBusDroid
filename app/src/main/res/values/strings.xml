@@ -7,4 +7,5 @@
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="update_database">更新資料庫</string>
+    <string name="view_bus">看路線</string>
 </resources>
