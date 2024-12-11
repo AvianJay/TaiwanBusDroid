@@ -12,3 +12,5 @@ def get_formated_info(route_key):
     info = asyncio.run(taiwanbus.get_complete_bus_info(route_key))
     return taiwanbus.format_bus_info(info)
 
+def provider(provider):
+    taiwanbus.update_provider(provider)
