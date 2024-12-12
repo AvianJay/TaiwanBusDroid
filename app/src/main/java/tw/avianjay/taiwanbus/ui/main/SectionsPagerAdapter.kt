@@ -7,10 +7,6 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.chaquo.python.Python
 import tw.avianjay.taiwanbus.R
 
-val py = Python.getInstance()
-val twbus = py.getModule("main")
-val paths: List<String> = twbus.callAttr("paths_name").asList().map { it.toString() }
-
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
  * one of the sections/tabs/pages.
@@ -25,12 +21,16 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        // 使用 paths 的值作为标签标题
+        val py = Python.getInstance()
+        val twbus = py.getModule("main")
+        val paths: List<String> = twbus.callAttr("paths_name").asList().map { it.toString() }
         return paths[position]
     }
 
     override fun getCount(): Int {
-        // 返回 paths 的长度
+        val py = Python.getInstance()
+        val twbus = py.getModule("main")
+        val paths: List<String> = twbus.callAttr("paths_name").asList().map { it.toString() }
         return paths.size
     }
 }

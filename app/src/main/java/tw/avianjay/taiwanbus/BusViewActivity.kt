@@ -28,7 +28,8 @@ class BusViewActivity : AppCompatActivity() {
         }
         val py = Python.getInstance()
         val twbus = py.getModule("main")
-
+        val jsonData = JSONObject(intent.getStringExtra("busData"))
+        twbus.callAttr("get_bus", jsonData.get("routekey"))
         binding = ActivityBusViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -38,7 +39,6 @@ class BusViewActivity : AppCompatActivity() {
         val tabs: TabLayout = binding.tabs
         tabs.setupWithViewPager(viewPager)
         val textView = findViewById<TextView>(R.id.textView)
-        val jsonData = JSONObject(intent.getStringExtra("busData"))
         textView.text = "Please wait"
         val formated_info = twbus.callAttr("get_formated_info", jsonData.get("routekey")).toString()
         textView.text = formated_info
