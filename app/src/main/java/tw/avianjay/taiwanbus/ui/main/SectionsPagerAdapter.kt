@@ -23,14 +23,14 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
     override fun getPageTitle(position: Int): CharSequence? {
         val py = Python.getInstance()
         val twbus = py.getModule("main")
-        val paths: List<String> = twbus.callAttr("paths_name").asList().map { it.toString() }
+        val paths: List<String> = twbus.get("paths_name")
         return paths[position]
     }
 
     override fun getCount(): Int {
         val py = Python.getInstance()
         val twbus = py.getModule("main")
-        val paths: List<String> = twbus.callAttr("paths_name").asList().map { it.toString() }
+        val paths: List<String> = twbus.get("paths_name")
         return paths.size
     }
 }
