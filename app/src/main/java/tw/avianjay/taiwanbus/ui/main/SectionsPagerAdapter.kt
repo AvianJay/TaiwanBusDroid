@@ -11,26 +11,24 @@ import tw.avianjay.taiwanbus.R
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
  * one of the sections/tabs/pages.
  */
-class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
-    FragmentPagerAdapter(fm) {
+class SectionsPagerAdapter(
+    private val context: Context,
+    fm: FragmentManager
+) : FragmentPagerAdapter(fm) {
+
+    private val py = Python.getInstance()
+    private val twbus = py.getModule("main")
+    private val paths: List<String> = twbus.get("paths_name")?.asList()?.map { it.toString() } ?: emptyList()
 
     override fun getItem(position: Int): Fragment {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment.
-        return PlaceholderFragment.newInstance(position + 1)
+        return PlaceholderFragment.newInstance(paths.getOrElse(position) { "Unknown" })
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        val py = Python.getInstance()
-        val twbus = py.getModule("main")
-        val paths: List<String> = twbus.get("paths_name").asList().map { it.toString() }
-        return paths[position]
+        return paths.getOrElse(position) { "Unknown" }
     }
 
     override fun getCount(): Int {
-        val py = Python.getInstance()
-        val twbus = py.getModule("main")
-        val paths: List<String> = twbus.get("paths_name").asList().map { it.toString() }
         return paths.size
     }
 }
