@@ -13,22 +13,20 @@ import tw.avianjay.taiwanbus.R
  */
 class SectionsPagerAdapter(
     private val context: Context,
-    fm: FragmentManager
+    fm: FragmentManager,
+    private val paths: List<String> // paths 是字符串列表
 ) : FragmentPagerAdapter(fm) {
 
-    private val py = Python.getInstance()
-    private val twbus = py.getModule("main")
-    private val paths: List<String> = twbus.get("paths_name")?.asList()?.map { it.toString() } ?: emptyList()
-
     override fun getItem(position: Int): Fragment {
-        return PlaceholderFragment.newInstance(paths.getOrElse(position) { "Unknown" })
+        // 使用 Fragment 顯示內容，這裡可以傳遞 path 給 Fragment
+        return PlaceholderFragment.newInstance(paths[position])
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        return paths.getOrElse(position) { "Unknown" }
+        return paths[position] // 使用 paths[position] 作為 Tab 標題
     }
 
     override fun getCount(): Int {
-        return paths.size
+        return paths.size // 返回 Tab 的數量
     }
 }
