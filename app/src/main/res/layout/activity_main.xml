@@ -40,5 +40,14 @@
         android:text="@string/update_database"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/view_bus"
+        android:layout_width="191dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/view_bus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

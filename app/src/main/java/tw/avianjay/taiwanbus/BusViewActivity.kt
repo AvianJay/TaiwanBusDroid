@@ -1,6 +1,9 @@
 package tw.avianjay.taiwanbus
 
+import org.json.JSONObject
 import android.os.Bundle
+import android.content.Intent
+import android.widget.TextView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
@@ -20,7 +23,13 @@ class BusViewActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        if (! Python.isStarted()) {
+            Python.start(AndroidPlatform(this))
+        }
+        val py = Python.getInstance()
+        val twbus = py.getModule("main")
+        val jsonData = JSONObject(intent.getStringExtra("busData"))
+        twbus.callAttr("get_bus", jsonData.get("routekey"))
         binding = ActivityBusViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -29,5 +38,9 @@ class BusViewActivity : AppCompatActivity() {
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = binding.tabs
         tabs.setupWithViewPager(viewPager)
+        val textView = findViewById<TextView>(R.id.textView)
+        textView.text = "Please wait"
+        val formated_info = twbus.callAttr("get_formated_info", jsonData.get("routekey")).toString()
+        textView.text = formated_info
     }
 }

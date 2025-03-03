@@ -4,32 +4,29 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.chaquo.python.Python
 import tw.avianjay.taiwanbus.R
-
-private val TAB_TITLES = arrayOf(
-    R.string.tab_text_1,
-    R.string.tab_text_2
-)
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
  * one of the sections/tabs/pages.
  */
-class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
-    FragmentPagerAdapter(fm) {
+class SectionsPagerAdapter(
+    private val context: Context,
+    fm: FragmentManager,
+    private val paths: List<String> // paths 是字符串列表
+) : FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment.
-        return PlaceholderFragment.newInstance(position + 1)
+        // 使用 Fragment 顯示內容，這裡可以傳遞 path 給 Fragment
+        return PlaceholderFragment.newInstance(paths[position])
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        return context.resources.getString(TAB_TITLES[position])
+        return paths[position] // 使用 paths[position] 作為 Tab 標題
     }
 
     override fun getCount(): Int {
-        // Show 2 total pages.
-        return 2
+        return paths.size // 返回 Tab 的數量
     }
 }
