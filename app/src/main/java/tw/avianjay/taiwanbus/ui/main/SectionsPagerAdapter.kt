@@ -19,7 +19,7 @@ class SectionsPagerAdapter(
 
     override fun getItem(position: Int): Fragment {
         // 使用 Fragment 顯示內容，這裡可以傳遞 path 給 Fragment
-        return PlaceholderFragment.newInstance(paths[position])
+        return PlaceholderFragment.newInstance(position)
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
