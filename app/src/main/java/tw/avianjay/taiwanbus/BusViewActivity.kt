@@ -33,7 +33,10 @@ class BusViewActivity : AppCompatActivity() {
         binding = ActivityBusViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
+        val sectionsPagerAdapter = SectionsPagerAdapter(
+            this, supportFragmentManager,
+            paths = TODO()
+        )
         val viewPager: ViewPager = binding.viewPager
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = binding.tabs
