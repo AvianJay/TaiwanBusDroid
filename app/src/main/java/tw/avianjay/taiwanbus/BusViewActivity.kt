@@ -14,6 +14,7 @@ import android.view.MenuItem
 import tw.avianjay.taiwanbus.ui.main.SectionsPagerAdapter
 import tw.avianjay.taiwanbus.databinding.ActivityBusViewBinding
 import com.chaquo.python.PyException
+import com.chaquo.python.PyObject
 import com.chaquo.python.Python
 import com.chaquo.python.android.AndroidPlatform
 
@@ -33,10 +34,9 @@ class BusViewActivity : AppCompatActivity() {
         binding = ActivityBusViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val sectionsPagerAdapter = SectionsPagerAdapter(
-            this, supportFragmentManager,
-            paths = TODO()
-        )
+        val paths: List<String> = twbus.get("paths_name")?.asList()?.map(PyObject::toString) ?: emptyList()
+
+        val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager, paths)
         val viewPager: ViewPager = binding.viewPager
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = binding.tabs
