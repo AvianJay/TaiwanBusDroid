@@ -47,7 +47,7 @@ android {
 chaquopy {
     defaultConfig {
         pip {
-            install("TaiwanBus")
+            install("TaiwanBus==0.0.8")
         }
     }
     productFlavors { }

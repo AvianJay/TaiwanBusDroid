@@ -4,6 +4,7 @@ import asyncio
 route_name = ""
 paths_name = []
 paths = []
+db_updates = {}
 
 def get_bus(routekey):
     global route_name, paths_name, paths
@@ -20,3 +21,7 @@ def get_formated_info(route_key):
 
 def provider(provider):
     taiwanbus.update_provider(provider)
+
+def check_database_update():
+    global db_updates
+    db_updates = taiwanbus.check_database_update()
