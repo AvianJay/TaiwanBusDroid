@@ -8,6 +8,7 @@ db_updates = {}
 
 def get_bus(routekey):
     global route_name, paths_name, paths
+    path_name = []
     paths = asyncio.run(taiwanbus.get_complete_bus_info(routekey))
     path = asyncio.run(taiwanbus.fetch_paths(routekey))
     for p in path:
